@@ -121,6 +121,8 @@ console.log(BMI);
 console.log('Is Mark`s BMI is higher than John`s? ' + BMI);
 */
 
+// IF
+/*
 var firstName = 'John';
 var civilStatus = 'single';
 
@@ -154,4 +156,115 @@ if (markBMI > johnBMI) {
 } else {
   console.log('John BMI is greater!');
 }
+*/
+
+// BOOLEAN LOGIC
+/*
+var firstName = 'John';
+var age = 20;
+
+if (age < 13) {
+  console.log(firstName + ' is a boy');
+} else if (age >= 13 && age < 20) {
+  console.log(firstName + ' is a teenager');
+} else if (age >= 20 && age < 30) {
+  console.log(firstName + ' is a young man');
+} else {
+  console.log(firstName + ' is a man');
+}
+
+// && - and
+// || - or
+// ! - not
+*/
+
+// DECISIONS
+
+/*
+var firstName = 'John';
+var age = 12;
+
+// Ternary operator
+age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
+
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(drink);
+
+//Switch statement
+
+var job = 'teacher';
+switch (job) {
+  case 'teacher':
+  case 'instructor':
+    console.log(firstName + ' teaches kids how to code.');
+    break;
+  case 'driver':
+    console.log(firstName + ' drives uber.');
+    break;
+  case 'designer':
+    console.log(firstName + ' design websites.');
+    break;
+  default:
+    console.log(firstName + ' does something else.');
+}
+
+
+switch (true) {
+  case age < 13:
+    console.log(firstName + ' is a boy');
+    break;
+  case age >= 13 && age < 20:
+    console.log(firstName + ' is a teenager');
+    break;
+  case age >= 20 && age < 30:
+    console.log(firstName + ' is a young man');
+    break;
+  default:
+    console.log(firstName + ' is a man');
+}
+
+*/
+
+// falsy values: undefined, null, 0, '', NaN
+//truthy values: NOT falsy
+/*
+var height;
+// height = 0;
+if (height || height === 0) {
+  console.log('Variable is defined');
+} else {
+  console.log('Variable has NOT been defied');
+}
+
+// === strict equality
+// == different types
+*/
+
+/*
+var scoreJohn = (89 +120 +103)/3;
+var scoreMike = (116 + 94 + 123)/3;
+var scoreMary = (97 + 134 + 105)/3;
+
+console.log(scoreJohn, scoreMike, scoreMary);
+
+if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
+  console.log('John`s team wins with ' + scoreJohn + ' points');
+} else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
+  console.log('Mike`s team wins with ' + scoreMike + ' points');
+} else if (scoreMary > scoreMike && scoreMary > scoreJohn) {
+  console.log('Mary`s team wins with ' + scoreMike + ' points');
+} else { 
+  console.log('There is a draw'); 
+}
+*/
+
+// if (scoreJohn > scoreMike) {
+//   console.log('John`s team wins with ' + scoreJohn + ' points');
+// } else if (scoreMike > scoreJohn) {
+//   console.log('Mike`s team wins with ' + scoreMike + ' points');
+// } else {
+//   console.log('There is a draw');
+// }
+
+
 
