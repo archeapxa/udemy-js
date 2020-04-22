@@ -269,7 +269,7 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 
 
 // **********************FUNCTIONS
-
+/*
 function calculateAge(birthYear) {
   return 2018 - birthYear;
   }
@@ -293,3 +293,29 @@ function yearsUntilRetirement(year, firstName) {
 yearsUntilRetirement(1990, 'John');
 yearsUntilRetirement(1948, 'Mike');
 yearsUntilRetirement(1968, 'Jane');
+*/
+
+// FUNCTION STATEMENT
+
+//declaration
+//function whatDoYouDo(job, firstName) {}
+
+//expression
+var whatDoYouDo = function(job, firstName) {
+  switch(job) {
+    case 'teacher':
+      return firstName + ' teaches kids how to code';
+    case 'driver':
+      return firstName + ' driver uber';
+    case 'designer':
+      return firstName + ' designs things';
+    default:
+      return firstName + ' is ' + job; 
+  }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Jane'));
+console.log(whatDoYouDo('retired', 'Mark'));
+
+// ********************Arrays
