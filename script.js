@@ -533,16 +533,16 @@ var paymentsJohn = {
       } else {
         percentage = .1;
       };
-      this.tips.push(percentage * this.bill[i]);
-      this.totalPay.push(this.bill[i] + this.tips[i]);
+      this.tips[i] = percentage * this.bill[i]
+      this.totalPay[i] = this.bill[i] + this.tips[i]
     }
   },
   totalPay: []
 }
 
 paymentsJohn.calcTip();
-// console.log(paymentsJohn.tips)
-// console.log(paymentsJohn.totalPay)
+console.log(paymentsJohn.tips)
+console.log(paymentsJohn.totalPay)
 
 //MARK
 var paymentsMark = {
@@ -558,8 +558,8 @@ var paymentsMark = {
       } else {
         percentage = .25;
       };
-      this.tips.push(percentage * this.bill[i]);
-      this.totalPay.push(this.bill[i] + this.tips[i]);
+      this.tips[i] = percentage * this.bill[i]
+      this.totalPay[i] = this.bill[i] + this.tips[i]
     }
   },
   totalPay: []
@@ -574,15 +574,18 @@ function averageBill(array) {
   for (let i = 0; i < array.length; i++) {
     total = total + array[i];
   }
-  return average = total / array.length
+  return total / array.length
 }
 
 // console.log(averageBill(paymentsMark.tips) + ' is average for Mark`s family');
 // console.log(averageBill(paymentsJohn.tips) + ' is average for John`s family');
 
-if (averageBill(paymentsMark.tips) > averageBill(paymentsJohn.tips)) {
+paymentsJohn.average = averageBill(paymentsJohn.tips);
+paymentsMark.average = averageBill(paymentsMark.tips);
+
+if (paymentsMark.average > paymentsJohn.average) {
   console.log('Mark`s family paid highest tip in average');
-} else if (averageBill(paymentsMark.tips) < averageBill(paymentsJohn.tips)) {
+} else if (paymentsMark.average < paymentsJohn.average) {
   console.log('John`s family paid highest tip in average');
 } else {
   console.log('Families average tip is the same');
