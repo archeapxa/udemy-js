@@ -133,7 +133,7 @@ console.log(fullAges)
 console.log(rates)
 */
 
-
+/*
 function interviewQuestion(job) {
   if (job === 'designer') {
     return function(name) {
@@ -158,3 +158,25 @@ teacherQuestion('John');
 designerQuestion('Mark')
 
 interviewQuestion('teacher')('MAX');
+*/
+
+
+
+// IIFE
+/*
+function game () {
+  var score = Math.random() * 10;
+  console.log(score >= 5)
+}
+
+game();
+*/
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5)
+})();
+
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck)
+})(5);
