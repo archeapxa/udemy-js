@@ -98,6 +98,12 @@ var budgetController = (function() {
       }
     },
 
+    calculatePercentages: function() {
+
+      
+
+    },
+
     testing: function() {
       console.log(data);
     }
@@ -241,6 +247,16 @@ var controller = (function(budgetCtrl, UICtrl) {
     UICtrl.displayBudget(budget);
   };
 
+  updatePercentages = function() {
+    
+    // 1. Calculate the perc
+
+    // 2. Read perc from the budget controller
+
+    // 3. Update UI with new perc
+
+  },
+
   var ctrlAddItem = function() {
     var input, newItem;
     // 1. Get the filed input data
@@ -258,6 +274,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 
       // 5. Calculate and update budget
       updateBudget();
+
+      // 6. Calculate and update the percentages
+      updatePercentages();
     }
   };
 
@@ -277,6 +296,8 @@ var controller = (function(budgetCtrl, UICtrl) {
       UICtrl.deleteListItem(itemID);
       // 3. Update and show the new budget
       updateBudget();
+      // 4.  Calculate and update the percentages
+      updatePercentages();
     }
 
   };
