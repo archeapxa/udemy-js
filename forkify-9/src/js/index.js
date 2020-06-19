@@ -3,6 +3,8 @@
 //https://forkify-api.herokuapp.com/api/search
 
 import Search from './models/Search'
+import * as searchView from './views/searchView'
+import { elements } from './views/base'
 
 /** Global state of the app 
  * - search Object
@@ -14,23 +16,26 @@ const state = {};
 
 const controlSearch = async () => {
   // 1) Get query from the view
-  const query = 'pizza' //TODO
+  const query = searchView.getInput();
+  console.log(query)
 
   if (query) {
     // 2) New search object and add to state
     state.search = new Search(query);
 
     // 3) Prepare UI for result
+    searchView.clearInput();
+    searchView.clearResults();
 
     // 4) Search for recipers
     await state.search.getResults();
 
     // 5) render result on UI
-    console.log(state.search.result);
+    searchView.renderResults(state.search.result)
   }
 }
 
-document.querySelector('.search').addEventListener('submit', e => {
+elements.searchForm.addEventListener('submit', e => {
   e.preventDefault();
   controlSearch();
 });
