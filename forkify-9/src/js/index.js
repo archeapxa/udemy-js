@@ -2,9 +2,10 @@
 //const res = await axios(`https://forkify-api.herokuapp.com/api/search?&q=${this.query}`);
 //https://forkify-api.herokuapp.com/api/search
 
-import Search from './models/Search'
-import * as searchView from './views/searchView'
-import { elements, renderLoader, clearLoader } from './views/base'
+import Search from './models/Search';
+import Recipe from './models/Recipe';
+import * as searchView from './views/searchView';
+import { elements, renderLoader, clearLoader } from './views/base';
 
 /** Global state of the app 
  * - search Object
@@ -14,6 +15,8 @@ import { elements, renderLoader, clearLoader } from './views/base'
  */
 const state = {};
 
+
+// SEARCH CONTROLLER
 const controlSearch = async () => {
   // 1) Get query from the view
   const query = searchView.getInput();
@@ -51,3 +54,7 @@ elements.searchResPages.addEventListener('click', e => {
   }
 });
 
+//RECIPE CONTROLLER
+const r = new Recipe(47746);
+r.getRecipe();
+console.log(r);
