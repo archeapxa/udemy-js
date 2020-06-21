@@ -9,7 +9,6 @@ export const toggleLikeButton  = isLiked => {
 
 export const toggleLikeMenu = numLikes => {
   elements.likesMenu.style.visibility = numLikes > 0 ? 'visible' : 'hidden';
-  console.log(elements.likesMenu.style.visibility)
 };
 
 export const renderLike = like => {
