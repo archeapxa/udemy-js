@@ -19,7 +19,6 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * - liked recipes
  */
 const state = {};
-window.state = state;
 
 // SEARCH CONTROLLER
 const controlSearch = async () => {
@@ -149,8 +148,6 @@ elements.shopping.addEventListener('click', e => {
 
 
 // LIKE CONTROLLER
-
-
 const controlLike = () => {
   if (!state.likes) state.likes = new Likes();
   const currentID = state.recipe.id;

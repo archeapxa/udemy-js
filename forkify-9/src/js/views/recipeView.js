@@ -6,21 +6,22 @@ export const cleanRecipe = () => {
 };
 
 const formatCount = count => {
-  if (count) {
+    if (count) {
     // 2.5
-    let [int, dec] = count.toString().split('.').map(el => parseInt(el, 10));
+        const newCount = Math.round(count * 10) / 10;
+        let [int, dec] = newCount.toString().split('.').map(el => parseInt(el, 10));
 
-    if (!dec) return count;
+        if (!dec) return newCount;
 
-    if (int === 0) {
-      const fr = new Fraction(count);
-      return `${fr.numerator}/${fr.denominator}`;
-    } else {
-      const fr = new Fraction(count - int);
-      return `${int} ${fr.numerator}/${fr.denominator}`;
+        if (int === 0) {
+            const fr = new Fraction(newCount);
+            return `${fr.numerator}/${fr.denominator}`;
+        } else {
+            const fr = new Fraction(newCount - int);
+            return `${int} ${fr.numerator}/${fr.denominator}`;
+        }
     }
-  }
-  return '?';
+    return '?';
 };
 
 const createIngredient = ingredient => `

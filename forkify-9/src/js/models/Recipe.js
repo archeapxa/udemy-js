@@ -60,9 +60,9 @@ export default class Recipe {
         }
 
         if (arrCount.length === 1) {
-          count = Math.floor(eval(arrIng[0].replace('-', '+')) * 100) / 100;
+          count = eval(arrIng[0].replace('-', '+'));
         } else {
-          count = Math.floor(eval(arrIng.slice(0, unitIndex).join('+')) * 100) / 100;
+          count = eval(arrIng.slice(0, unitIndex).join('+'));
         }
 
         objIng = {
@@ -74,7 +74,7 @@ export default class Recipe {
       } else if (parseInt(arrIng[0], 10)) {
         //there is no unit, but 1st element is a number
         objIng = {
-          count: Math.floor(parseInt(arrIng[0], 10) * 100) / 100,
+          count: parseInt(arrIng[0], 10),
           unit: '',
           ingredient: arrIng.slice(1).join(' ')
         }
